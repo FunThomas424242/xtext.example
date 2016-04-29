@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.example.domainmodel/src-gen" editDirectory="/org.example.domainmodel.edit/src"
+    editorDirectory="/org.example.domainmodel.editor/src" modelPluginID="org.example.domainmodel"
+    forceOverwrite="true" modelName="Domainmodel" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.example.domainmodel.edit"
+    editorPluginID="org.example.domainmodel.editor" runtimeVersion="2.11">
+  <genPackages prefix="Domainmodel" basePackage="org.example.domainmodel" disposableProviderFactory="true"
+      fileExtensions="dmodel" ecorePackage="Domainmodel.ecore#/">
+    <genClasses ecoreClass="Domainmodel.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Model/greetings"/>
+    </genClasses>
+    <genClasses ecoreClass="Domainmodel.ecore#//Greeting">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Domainmodel.ecore#//Greeting/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
