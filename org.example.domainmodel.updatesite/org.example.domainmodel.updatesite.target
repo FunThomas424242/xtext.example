@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="org.example.domainmodel.updatesite.target" sequenceNumber="10">
+<?pde version="3.8"?><target name="org.example.domainmodel.updatesite.target" sequenceNumber="11">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.jdt.source.feature.group" version="3.11.2.v20160212-1500"/>
@@ -21,8 +21,8 @@
 <repository location="http://download.eclipse.org/modeling/emft/mwe/updates/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.xtext.sdk.feature.group" version="2.9.1.v201512180746"/>
-<unit id="org.eclipse.xtend.sdk.feature.group" version="2.9.1.v201512180746"/>
+<unit id="org.eclipse.xtext.sdk.feature.group" version="2.9.2.v201603040440"/>
+<unit id="org.eclipse.xtend.sdk.feature.group" version="2.9.2.v201603040440"/>
 <repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/releases/"/>
 </location>
 </locations>
