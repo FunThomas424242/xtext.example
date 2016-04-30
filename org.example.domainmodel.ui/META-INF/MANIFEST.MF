@@ -21,5 +21,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.example.domainmodel.ui.quickfix,
  org.example.domainmodel.ui.contentassist,
  org.example.domainmodel.ui.internal,
- org.example.domainmodel.ui.contentassist.antlr
+ org.example.domainmodel.ui.contentassist.antlr,
+ org.example.domainmodel.ui.contentassist.antlr.internal
 Bundle-Activator: org.example.domainmodel.ui.internal.DomainmodelActivator

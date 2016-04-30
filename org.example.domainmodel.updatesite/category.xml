@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.example.domainmodel.sdk_0.0.0.jar" id="org.example.domainmodel.sdk" version="0.0.0">
+      <category name="org.example.domainmodel"/>
+   </feature>
+   <category-def name="org.example.domainmodel" label="Hero Language"/>
+</site>
