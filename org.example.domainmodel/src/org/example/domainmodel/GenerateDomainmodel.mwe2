@@ -31,7 +31,7 @@ Workflow {
 			path = '${runtimeProject}'
 		}
 
-		scanClassPath = true
+		//scanClassPath = true
 		platformUri = "${runtimeProject}/.."// The following two lines can be removed, if Xbase is not used.
 		registerGeneratedEPackage = "org.eclipse.xtext.xbase.XbasePackage"
 		registerGenModelFile = "platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel"
@@ -42,7 +42,7 @@ Workflow {
 	}
 
 	component = DirectoryCleaner {
-		directory = "${runtimeProject}/model/generated"
+		directory = "${runtimeProject}/model"
 	}
 
 	component = DirectoryCleaner {
@@ -62,13 +62,16 @@ Workflow {
 		encoding = encoding
 		language = auto-inject {
 			forcedResourceSet = theResourceSet
+			
 			uri = grammarURI
 
 			// Java API to access grammar elements (required by several other fragments)
 			fragment = grammarAccess.GrammarAccessFragment auto-inject {}
 
 			// generates Java API for the generated EPackages
-			fragment = ecore.EMFGeneratorFragment auto-inject {}
+			fragment = ecore.EMFGeneratorFragment auto-inject {
+				javaModelDirectory = "/${projectName}/src-gen"
+			}
 
 			// the old serialization component
 			// fragment = parseTreeConstructor.ParseTreeConstructorFragment auto-inject {}    
@@ -83,9 +86,8 @@ Workflow {
 
 			// The antlr parser generator fragment.
 			fragment = parser.antlr.XtextAntlrGeneratorFragment auto-inject {
-			//  options = {
-			//      backtrack = true
-			//  }
+				// For the very slow servers
+    			antlrParam = "-Xconversiontimeout" antlrParam = "5000"
 			}
 
 			// Xtend-based API for validation
@@ -134,11 +136,11 @@ Workflow {
 			// provides the necessary bindings for java types integration
 			fragment = types.TypesGeneratorFragment auto-inject {}
 
-			// generates the required bindings only if the grammar inherits from Xbase
-			fragment = xbase.XbaseGeneratorFragment auto-inject {}
-
 			// generates the required bindings only if the grammar inherits from Xtype
 			fragment = xbase.XtypeGeneratorFragment auto-inject {}
+
+			// generates the required bindings only if the grammar inherits from Xbase
+			fragment = xbase.XbaseGeneratorFragment auto-inject {}
 
 			// provides a preference page for template proposals
 			fragment = templates.CodetemplatesGeneratorFragment auto-inject {}
